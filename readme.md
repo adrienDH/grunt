@@ -5,4 +5,18 @@ Installation de grunt
 
 <pre><code>sudo npm init</code></pre>
 
-<pre><code>sudo npm install --save-dev</code></pre>
+<pre><code>sudo npm install grunt --save-dev</code></pre>
+
+Utilisation
+==
+
+<pre><code>grunt</code></pre>
+
+Ma configuration
+==
+
+Cette configuration va faire plusieurs choses : 
+- compiler les fichiers less en fichiers css
+- minifier les fichiers css
+- minifier les fichiers js
+- minifier les images
