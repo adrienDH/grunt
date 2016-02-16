@@ -1,3 +1,12 @@
+Ma configuration grunt
+==
+
+Cette configuration va faire plusieurs choses : 
+- compiler les fichiers less en fichiers css
+- minifier les fichiers css
+- minifier les fichiers js
+- minifier les images
+
 Installation de grunt
 ==
 
@@ -11,12 +20,3 @@ Utilisation
 ==
 
 <pre><code>grunt</code></pre>
-
-Ma configuration
-==
-
-Cette configuration va faire plusieurs choses : 
-- compiler les fichiers less en fichiers css
-- minifier les fichiers css
-- minifier les fichiers js
-- minifier les images
