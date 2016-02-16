@@ -2,7 +2,6 @@ module.exports = function(grunt) {
 	
 	grunt.initConfig({
 		
-		// Compilation des fichier less en css
 		less: {
 			src: {
 				expand: true,
@@ -15,48 +14,44 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// Minification des images
 		imagemin: {
 			dynamic: {
 				files: [{
 					expand: true,
 					cwd: 'resources/images/',
 					src: ['**/*.{png,jpg,gif}'],
-					dest: 'resources/images/min/'
+					dest: 'resources/images/'
 				}]
 			}
 		},
 		
-		// Minification des css
 		cssmin: {
 			target: {
 				files: [{
 					expand: true,
 					cwd: 'resources/css/',
 					src: ['**/*.css'],
-					dest: 'resources/css/min',
+					dest: 'resources/css/',
 					ext: '.css'
 				}]
 			}
 		},
 		
-		// Minification des js
 		uglify: {
 			my_target: {
 				files: [{
 					expand: true,
 					cwd: 'resources/js',
 					src: '**/*.js',
-					dest: 'resources/js/min'
+					dest: 'resources/js/'
 				}]
 			}
 		},
 		
-		
 		watch: {
 			styles: {
 				files: ['resources/less/**/*.less'],
-				tasks: ['less'],
+				tasks: ['less', 'cssmin'],
 				options: {
 					nospawn: true
 				}
@@ -70,5 +65,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.registerTask('default', ['less', 'cssmin', 'uglify', 'imagemin', 'watch']);
+	
+	// Voir comment gérer uglify pour débuguer facilement le JS en dev et avoir un JS en prod minifié
+	
+	grunt.registerTask('default', ['less', 'cssmin', 'imagemin', 'watch']);
 }
